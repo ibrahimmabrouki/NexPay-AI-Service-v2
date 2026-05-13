@@ -22,13 +22,25 @@ def transaction_to_text(transaction: dict) -> str:
     user_name = transaction.get("user_name", "Unknown")
     phone_number = transaction.get("phone_number", "Unknown")
 
-    if tx_type == "TRANSFER":
+    if tx_type == "TRANSFER_OUT":
         return (
-            f"TRANSFER | "
+            f"TRANSFER_OUT | "
             f"sender: {user_name} | "
             f"sender_phone: {phone_number} | "
             f"receiver: {transaction.get('receiver_name', 'Unknown')} | "
             f"receiver_phone: {transaction.get('receiver_phone', 'Unknown')} | "
+            f"amount: {transaction.get('amount')} "
+            f"{transaction.get('currency')} | "
+            f"date: {created_at}"
+        )
+    
+    if tx_type == "TRANSFER_IN":
+        return (
+            f"TRANSFER_IN | "
+            f"receiver: {user_name} | "
+            f"receiver_phone: {phone_number} | "
+            f"sender: {transaction.get('sender_name', 'Unknown')} | "
+            f"sender_phone: {transaction.get('sender_phone', 'Unknown')} | "
             f"amount: {transaction.get('amount')} "
             f"{transaction.get('currency')} | "
             f"date: {created_at}"
