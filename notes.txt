@@ -1,0 +1,41 @@
+we use pip it is something like the npm in order to install packges
+
+commands: 
+1- py -m pip install requests for example or pip install requests 
+2- py -m pip list: to check the list of the packages installed globally 
+3- py -m uninstall request: to delete some packge 
+4- py -m install requests==2.30.0: installing a specific version of the package
+5- py -m pip install -U requests: to update the package to the current release 
+
+
+Virtual Environment: 
+In the above section we discovered how we can install the packages Globally 
+but sometimes different projects require differet packages and packages versions 
+that where the Venv becomes important it is similar to package json
+
+commands:
+1-py -m venv .venv: to create a virtual Environment called .venv
+
+after creating the .venv folder we need to activate it 
+2-.\.venv\Scripts\Activate 
+(.venv): indicator that the venv is activated
+
+3- deactivate: to deactivate the venv
+
+4- pip list: to check the installed packages in the venv
+
+5- pip install requests: to install the packes requests in the venv
+it will also install a bunch of dependencies 
+
+6- pip show requests: to view some detailed info about the request in addition the what dependencies it requires
+and all fo these are going to places in the Lib\
+
+7- pip install python-dotenv: to install the dotenv package 
+
+To know about the packages visit: pypi.org and search for the projects.
+
+These dependecies wont be included in the GitRepo so what we do is to create a txt file that includes the name and the versions
+8- py -m pip freeze > requirements.txt
+
+9-pip freeze > requirements.txt to move them to requiremnts directly 
+
